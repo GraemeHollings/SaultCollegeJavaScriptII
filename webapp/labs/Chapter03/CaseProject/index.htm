@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 6th Edition
+      Chapter 1
+      Hands-on Project 1-5
+
+      Author: Graeme    
+      Date: Jan o7 - 12,019   
+
+      Filename: index.htm
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Sault College Programming</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+         Sault College Programming
+      </h1>
+       
+       
+   </header>
+    <h3 align="center"><a href="index.htm">Home</a></h3>
+    <h3 align="center"><a href="page1.html">About</a></h3>
+     <h3 align="center"><a href="page2.html">More Info</a></h3>
+     <h3 align="center"><a href="page3.html">About</a></h3>
+     <h3 align="center"><a href="page4.html">More About</a></h3>
+     <h3 align="center"><a href="page5.html">The Most About</a></h3>
+    
+    
+    
+    <article>
+      <h3>Some math calculations.</h3>
+      <form>
+         <input type="checkbox" id="item1" value="100" />
+         <label for="item1">Motherboard ($100.00)</label><br>
+         <input type="checkbox" id="item2" value="500" />
+         <label for="item2">Graphics Proccessing Unit($500.00)</label><br>
+         <input type="checkbox" id="item3" value="300" />
+         <label for="item3">CPU ($300.00)</label><br>
+         <input type="checkbox" id="item4" value="100" />
+         <label for="item4">RAM($100.00)</label><br>
+         <input type="checkbox" id="item5" value="90" />
+         <label for="item5">Computer Case ($90.00)</label><br>
+         <input type="submit" id="submit" value="Submit" />
+      </form>
+   </article>
+    
+  
+    
+    
+   <article>
+      <script>
+        
+                
+   function calcTotal() {
+    var itemTotal = 0;
+    var item1 = document.getElementById("item1");
+    var item2 = document.getElementById("item2");
+    var item3 = document.getElementById("item3");
+    
+    (item1.checked) ? (itemTotal += 100) : (itemTotal += 0);
+    (item2.checked) ? (itemTotal += 500) : (itemTotal += 0);
+    (item3.checked) ? (itemTotal += 300) : (itemTotal += 0);
+    (item4.checked) ? (itemTotal += 100) : (itemTotal += 0);
+    (item5.checked) ? (itemTotal += 90) : (itemTotal += 0);
+        
+      
+     
+        
+   var salesTaxRate = 0.07;
+   itemTotal *= 100;
+   var orderTotal = (itemTotal + (itemTotal * salesTaxRate)) / 100;
+   
+    if (orderTotal <= 1000)
+   {
+       
+       alert("You've earned the big spender trophy! More than 1000 in parts!")
+   } else 
+   {   
+   }  
+  
+   alert("Your order total is $" + orderTotal);
+   
+   
+        
+ }
+    
+    document.getElementById("submit").addEventListener("click", calcTotal, false);
+        
+      </script>
+   </article>
+</body>
+</html>
